@@ -1,4 +1,4 @@
-import { CapturedResultFilter, EnumCapturedResultItemType, OriginalImageResultItem } from "@dynamsoft/dynamsoft-core";
+import { CapturedResultFilter, EnumCapturedResultItemType, OriginalImageResultItem } from "dynamsoft-core";
 export default class MultiFrameResultCrossFilter implements CapturedResultFilter {
     verificationEnabled: any;
     duplicateFilterEnabled: any;
