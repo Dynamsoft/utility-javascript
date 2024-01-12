@@ -1,4 +1,5 @@
-import { CapturedResultFilter, EnumCapturedResultItemType, OriginalImageResultItem } from "dynamsoft-core";
+import { EnumCapturedResultItemType, OriginalImageResultItem } from "dynamsoft-core";
+import { CapturedResultFilter } from "@dynamsoft/dynamsoft-capture-vision-router";
 export default class MultiFrameResultCrossFilter implements CapturedResultFilter {
     verificationEnabled: any;
     duplicateFilterEnabled: any;
@@ -12,6 +13,8 @@ export default class MultiFrameResultCrossFilter implements CapturedResultFilter
     getDuplicateForgetTime(type: EnumCapturedResultItemType): number;
     getFilteredResultItemTypes(): number;
     onOriginalImageResultReceived: (result: OriginalImageResultItem) => void;
+    onDecodedBarcodesReceived(result: any): void;
+    onRecognizedTextLinesReceived(result: any): void;
     onDetectedQuadsReceived(result: any): void;
     onNormalizedImagesReceived(result: any): void;
 }
