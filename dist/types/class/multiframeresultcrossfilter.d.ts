@@ -1,5 +1,12 @@
 import { EnumCapturedResultItemType, OriginalImageResultItem } from "dynamsoft-core";
-import { CapturedResultFilter } from "@dynamsoft/dynamsoft-capture-vision-router";
+interface CapturedResultFilter {
+    onOriginalImageResultReceived?: (result: OriginalImageResultItem) => void;
+    onDecodedBarcodesReceived?: (result: any) => void;
+    onRecognizedTextLinesReceived?: (result: any) => void;
+    onDetectedQuadsReceived?: (result: any) => void;
+    onNormalizedImagesReceived?: (result: any) => void;
+    onParsedResultsReceived?: (result: any) => void;
+}
 export default class MultiFrameResultCrossFilter implements CapturedResultFilter {
     verificationEnabled: any;
     duplicateFilterEnabled: any;
@@ -18,4 +25,4 @@ export default class MultiFrameResultCrossFilter implements CapturedResultFilter
     onDetectedQuadsReceived(result: any): void;
     onNormalizedImagesReceived(result: any): void;
 }
-//# sourceMappingURL=multiframeresultcrossfilter.d.ts.map
+export {};
