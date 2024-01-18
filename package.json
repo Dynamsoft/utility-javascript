@@ -1,6 +1,6 @@
 {
   "name": "dynamsoft-utility",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "The Dynamsoft Utility module defines auxiliary classes shared by all Dynamsoft SDKs compliant with the Dynamsoft Capture Vision architecture.",
   "homepage": "https://dynamsoft.com/capture-vision/docs/web/programming/javascript/?ver=latest",
   "main": "./dist/utility.js",
@@ -38,7 +38,8 @@
     "updateLink:github": "updateLink --source=github",
     "updateCore:prod": "updateImportedPkg --package=dynamsoft-core --no-dev",
     "updateCore:dev": "updateImportedPkg --package=dynamsoft-core --dev",
-    "easyPublish": "npm run update:dev && npm i @dynamsoft/dynamsoft-core@latest && npm run build && npm publish"
+    "easyPublish": "npm run update:dev && npm i @dynamsoft/dynamsoft-core@latest && npm run build && npm publish",
+    "ep-no-core": "npm run update:dev && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -63,7 +64,6 @@
   ],
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "@dynamsoft/dynamsoft-capture-vision-router": "^2.0.20-dev-20231215143357",
     "@dynamsoft/rd2-scripts": "^0.1.4",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
