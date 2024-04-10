@@ -1,6 +1,6 @@
 {
   "name": "dynamsoft-utility",
-  "version": "1.0.21",
+  "version": "1.2.10",
   "description": "The Dynamsoft Utility module defines auxiliary classes shared by all Dynamsoft SDKs compliant with the Dynamsoft Capture Vision architecture.",
   "homepage": "https://dynamsoft.com/capture-vision/docs/web/programming/javascript/?ver=latest",
   "main": "./dist/utility.js",
@@ -39,7 +39,9 @@
     "updateCore:prod": "updateImportedPkg --package=dynamsoft-core --no-dev",
     "updateCore:dev": "updateImportedPkg --package=dynamsoft-core --dev",
     "easyPublish": "npm run update:dev && npm i @dynamsoft/dynamsoft-core@latest && npm run build && npm publish",
-    "ep-no-core": "npm run update:dev && npm run build && npm publish"
+    "ep-no-core": "npm run update:dev && npm run build && npm publish",
+    "overridesCore:prod": "npm pkg delete overrides.dynamsoft-core && npm pkg set dependencies.dynamsoft-core=\"^3.2.10\"",
+    "overridesCore:dev": "npm pkg set overrides.dynamsoft-core=$dynamsoft-core && npm pkg set dependencies.dynamsoft-core=npm:@dynamsoft/dynamsoft-core@latest && npm update dynamsoft-core --no-package-lock"
   },
   "repository": {
     "type": "git",
@@ -64,7 +66,7 @@
   ],
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "@dynamsoft/rd2-scripts": "^0.1.4",
+    "@dynamsoft/rd2-scripts": "^0.1.8",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
     "@rollup/plugin-terser": "^0.4.3",
@@ -75,6 +77,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "dynamsoft-core": "^3.0.30"
-  }
+    "dynamsoft-core": "^3.2.10"
+  },
+  "overrides": {}
 }
